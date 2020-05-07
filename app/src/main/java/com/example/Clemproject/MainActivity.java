@@ -1,27 +1,15 @@
 package com.example.Clemproject;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.View;
 import android.widget.Toast;
 
-import java.lang.reflect.Type;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     //private static final String BASE_URL = "https://pokeapi.co/";
@@ -65,7 +53,18 @@ public class MainActivity extends AppCompatActivity {
             input.add("Test" + i);
         }*/
         // define an adapter
-        mAdapter = new ListAdapter(DonneesList);
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mAdapter = new ListAdapter(DonneesList, new ListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Donnees item) {
+                controller.onItemClick(item);
+            }
+        });
         recyclerView.setAdapter(mAdapter);
 
     }
@@ -74,4 +73,8 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "API Error", Toast.LENGTH_SHORT).show();
     }
 
+    public void navigateToDetails(Donnees donnees) {
+        Toast.makeText(getApplicationContext(), "TODO NAVIGATE", Toast.LENGTH_SHORT).show();
+
+    }
 }

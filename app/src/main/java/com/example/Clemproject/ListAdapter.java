@@ -7,12 +7,15 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.Clemproject.R;
-
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<Donnees> values;
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Donnees item);
+    }
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -42,10 +45,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<Donnees> myDataset) {
+    public ListAdapter(List<Donnees> myDataset, OnItemClickListener listener) {
 
-        values = myDataset;
+        this.values = myDataset;
+        this.listener = listener;
     }
+
+    /*public void setListener(OnItemClickListener listener){
+        this.listener = listener;
+    }*/
 
     // Create new views (invoked by the layout manager)
     @Override
@@ -77,13 +85,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.txtFooter.setText(currentDonnees.getTotalRecovered());
         holder.txtFooter.setText(currentDonnees.getDate());*/
 
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+        /*holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 remove(position);
             }
+        });*/
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                listener.onItemClick(currentDonnees);
+            }
         });
     }
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
