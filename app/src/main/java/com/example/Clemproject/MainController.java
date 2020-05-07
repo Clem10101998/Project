@@ -1,11 +1,8 @@
 package com.example.Clemproject;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -14,8 +11,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
@@ -44,14 +39,8 @@ public class MainController {
                 //.setLenient()
                // .create();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-
-        Api donneesApi = retrofit.create(Api.class);
         //Log.d("Clem", "BEFORE CALLBACK");
-        Call<RestApiResponse> call = donneesApi.getDonneesResponse();
+        Call<RestApiResponse> call = Singletons.getDonneesApi().getDonneesResponse();
         call.enqueue(new Callback<RestApiResponse>() {
             @Override
             public void onResponse(Call<RestApiResponse> call, Response<RestApiResponse> response) {
