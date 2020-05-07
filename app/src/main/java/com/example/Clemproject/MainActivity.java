@@ -1,5 +1,6 @@
 package com.example.Clemproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,7 +75,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToDetails(Donnees donnees) {
-        Toast.makeText(getApplicationContext(), "TODO NAVIGATE", Toast.LENGTH_SHORT).show();
+        Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+        myIntent.putExtra("donneesKey", Singletons.getGson().toJson(donnees));
+        //myIntent.putExtra("donneesKeycountrycode", donnees.getCountryCode());
+
+        MainActivity.this.startActivity(myIntent);
+        //Toast.makeText(getApplicationContext(), "TODO NAVIGATE", Toast.LENGTH_SHORT).show();
 
     }
 }
