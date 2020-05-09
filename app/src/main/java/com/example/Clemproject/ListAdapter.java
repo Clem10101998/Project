@@ -75,7 +75,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         final Donnees currentDonnees = values.get(position);
 
         holder.txtHeader.setText(currentDonnees.getCountry());
-       holder.txtFooter.setText(currentDonnees.getCountryCode());
+        holder.txtFooter.setText(currentDonnees.getSlug());
+       //holder.txtFooter.setText(currentDonnees.getCountryCode());
         /*holder.txtFooter.setText(currentDonnees.getSlug());
         holder.txtFooter.setText(currentDonnees.getNewConfirmed());
         holder.txtFooter.setText(currentDonnees.getTotalConfirmed());
