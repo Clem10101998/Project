@@ -8,6 +8,7 @@ Cette application a été codé en java. Elle affiche un premier écran avec la 
 ensuite le choix de cliquer sur l'un des pays. Après cette action, une redirection se fait sur un deuxième écran affichant 
 plusieurs informations : 
 
+- Le pays sélectionné
 - Le nombre de personnes infectées 
 - Les nouveaux décès liés au virus
 - Le nombre total de décès
@@ -20,14 +21,24 @@ plusieurs informations :
 - Installation d'Android Studio
 - Réalisation des TDs
 
-## Consignes à respecter
+## Consignes respectées
 
 - Ecran avec une liste d'éléments
 - Ecran avec le détail d'un élément
 - Appel WebService à une API Rest
 - Stockage de données en Cache
+- Architecture : Design Patterns et Singleton
 
 ## Fonctionnalités
+
+### Premier écran affichant une liste d'un ensemble de pays
+
+<img src="Images/Image_first_screen.png" width="200">
+
+### Deuxième écran qui affiche le détail d'un pays concernant le Covid-19
+
+<img src="Images/Image_second_screen.png" width="200">
+
 
 
 
