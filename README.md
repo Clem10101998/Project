@@ -31,11 +31,15 @@ plusieurs informations :
 
 ## Fonctionnalités
 
-### Premier écran affichant une liste d'un ensemble de pays
+### Premier écran 
+
+##### Affichage d'une liste d'un ensemble de pays
 
 <img src="Images/Image_first_screen.png" width="200">
 
-### Deuxième écran qui affiche le détail d'un pays concernant le Covid-19
+### Deuxième écran 
+
+##### Affichage du détail d'un pays concernant le Covid-19
 
 <img src="Images/Image_second_screen.png" width="200">
 
