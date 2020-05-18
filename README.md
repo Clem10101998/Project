@@ -4,7 +4,7 @@ Application présentant l'impact lié au covid-19 sur différents pays, réalis�
 
 ## Présentation
 
-Cette application a été codé en java. Elle affiche un premier écran avec la liste d'un ensemble de pays. L'utilisateur a 
+Cette application a été codée en java. Elle affiche un premier écran avec la liste d'un ensemble de pays. L'utilisateur a 
 ensuite le choix de cliquer sur l'un des pays. Après cette action, une redirection se fait sur un deuxième écran affichant 
 plusieurs informations : 
 
