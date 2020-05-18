@@ -38,17 +38,18 @@ public class DetailActivity extends AppCompatActivity {
         showDetail(donnees);
     }
 
+ @SuppressLint("DefaultLocale")
     private void showDetail(Donnees donnees) {
 
-    txtDetail.setText("Pays :"+" "+donnees.getCountry());
-    txtDetail2.setText("Country Code :"+" "+donnees.getCountryCode());
-    txtDetail3.setText("Nouvelles personnes infectées :"+" "+donnees.getNewConfirmed());
-    txtDetail4.setText("Nombre total de personnes infectées : "+" "+donnees.getTotalConfirmed());
-    txtDetail5.setText("Nouveaux décès liés au virus : "+" "+donnees.getNewDeaths());
-    txtDetail6.setText("Nombre total de décès liés au virus : "+" "+donnees.getTotalDeaths());
-    txtDetail7.setText("Nouvelles personnes décontaminées : "+" "+donnees.getNewRecovered());
-    txtDetail8.setText("Nombre total de personnes décontaminées : "+" "+donnees.getTotalRecovered());
-    txtDetail9.setText("Date de mise à jour des données : "+" "+donnees.getDate());
+    txtDetail.setText(String.format("Pays : %s", donnees.getCountry()));
+    txtDetail2.setText(String.format("Country Code : %s", donnees.getCountryCode()));
+    txtDetail3.setText(String.format("Nouvelles personnes infectées : %d", donnees.getNewConfirmed()));
+    txtDetail4.setText(String.format("Nombre total de personnes infectées :  %d", donnees.getTotalConfirmed()));
+    txtDetail5.setText(String.format("Nouveaux décès liés au virus :  %d", donnees.getNewDeaths()));
+    txtDetail6.setText(String.format("Nombre total de décès liés au virus :  %d", donnees.getTotalDeaths()));
+    txtDetail7.setText(String.format("Nouvelles personnes décontaminées :  %d", donnees.getNewRecovered()));
+    txtDetail8.setText(String.format("Nombre total de personnes décontaminées :  %d", donnees.getTotalRecovered()));
+    txtDetail9.setText(String.format("Date de mise à jour des données :  %s", donnees.getDate()));
     }
 }
 
