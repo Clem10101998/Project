@@ -29,7 +29,7 @@ plusieurs informations :
 - Stockage de données en Cache
 - Architecture : Design Patterns et Singleton
 
-## Fonctionnalités
+## Fonctionnalités : 
 
 ### Premier écran 
 
